@@ -1,0 +1,58 @@
+== Salesforce_Account_Create_V1
+Creates a Salesforce Account record with the given parameters and returns the
+Account Id of the created Account record.  The parameters are mapped directly to
+their respective fields.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Account Name]
+  Sets the Account Name field of the Account record
+[Account Site]
+  Sets the Account Site field of the Account record
+[Type]
+  Sets the Type field of the Account record
+[Industry]
+  Sets the Industry field of the Account record
+[Annual Revenue]
+  Sets the Annual Revenue field of the Account record
+[Rating]
+  Sets the Rating field of the Account record
+[Phone]
+  Sets the Phone field of the Account record
+[Fax]
+  Sets the Fax field of the Account record
+[Website]
+  Sets the Website field of the Account record
+[Ownership]
+  Sets the Ownership field of the Account record
+
+=== Results
+[Account Id]
+  The Id of the Salesforce Account record that was created
+
+=== Detailed Description
+Creates a Salesforce Account record with the given parameters and returns the
+Account Id of the created Account record.
+
+This handler essentially has two phases: authentication and record creation.
+
+* The handler uses the SOAP API login method to retrieve the authentication
+  details that are required for making the REST API requests.  The required
+  authentication values are instance and session id, these two values are
+  retrieved by the login() helper method in the handler.
+
+* The handler uses the REST API to create the Salesforce record.  The Salesforce
+  record simply contains mappings provided by the @field_values instance
+  variable.  The handler's parameters are mapped to Salesforce fields in the
+  node.xml as show here:
+  - Account Name   => Name
+  - Account Site   => Site
+  - Type           => Type
+  - Industry       => Industry
+  - Annual Revenue => AnnualRevenue
+  - Rating         => Rating
+  - Phone          => Phone
+  - Fax            => Fax
+  - Website        => Website
+  - Ownership      => Ownership

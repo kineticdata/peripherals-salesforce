@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_opportunity_update" name="Salesforce Opportunity Update" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Updates a Salesforce Opportunity record with the given parameters.  The parameters are mapped directly to their respective fields.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_opportunity_update/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="opportunity_id" label="Opportunity Id" required="true"
+          tooltip="The Id of the Salesforce Opportunity record that will be updated" />
+        <parameter id="opportunity_name" label="Opportunity Name" required="true"
+          tooltip="Sets the Opportunity Name field of the Opportunity record" />
+        <parameter id="close_date" label="Close Date" required="true"
+          tooltip="Sets the Close Date field of the Opportunity record" />
+        <parameter id="stage" label="Stage" required="true"
+          tooltip="Sets the Stage field of the Opportunity record" />
+        <parameter id="private" label="Private" required="false"
+          tooltip="Sets the Private field of the Opportunity record" />
+        <parameter id="type" label="Type" required="false"
+          tooltip="Sets the Type field of the Opportunity record" />
+        <parameter id="lead_source" label="Lead Source" required="false"
+          tooltip="Sets the Lead Source field of the Opportunity record" />
+        <parameter id="amount" label="Amount" required="false"
+          tooltip="Sets the Amount field of the Opportunity record" />
+        <parameter id="next_step" label="Next Step" required="false"
+          tooltip="Sets the Next Step field of the Opportunity record" />
+        <parameter id="probability" label="Probability" required="false"
+          tooltip="Sets the Probability field of the Opportunity record" />
+    </parameters>
+    <handler name="salesforce_opportunity_update" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="token">&lt;%= @info['token'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='opportunity_id'>&lt;%= @parameters['opportunity_id'] %&gt;</parameter>
+        </parameters>
+        <fields>
+            <field name='Name'>&lt;%= @parameters['opportunity_name'] %&gt;</field>
+            <field name='CloseDate'>&lt;%= @parameters['close_date'] %&gt;</field>
+            <field name='StageName'>&lt;%= @parameters['stage'] %&gt;</field>
+            <field name='IsPrivate'>&lt;%= @parameters['private'] %&gt;</field>
+            <field name='Type'>&lt;%= @parameters['type'] %&gt;</field>
+            <field name='LeadSource'>&lt;%= @parameters['lead_source'] %&gt;</field>
+            <field name='Amount'>&lt;%= @parameters['amount'] %&gt;</field>
+            <field name='NextStep'>&lt;%= @parameters['next_step'] %&gt;</field>
+            <field name='Probability'>&lt;%= @parameters['probability'] %&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml"/>
+</taskDefinition>

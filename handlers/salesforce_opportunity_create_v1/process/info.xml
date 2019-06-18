@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This file contains a list of all configurable values used by the task node.
+
+The name of the parameter is defined by applying the 'name' attribute to the
+info tag.  For example, to define a parameter named 'username' add the
+following line:
+<info name="username" description="The username used to login"></info>
+
+Default values may be defined by placing the value of the parameter
+within the info tags.  For example, to define a parameter named 'username'
+with a default value of 'KD_WEBUSER' add the following line:
+<info name="username">KD_WEBUSER</info>
+-->
+<taskInfo version="1.0">
+    <info name="username" description="The username of the account that will be used for record manipulation."></info>
+    <info name="password" description="The password of the account that will be used for record manipulation"></info>
+    <info name="token"    description="The security token associated with the account used for record manipulation  To reset this value, log into Saleforce using the desired account and navigate to Setup -> My Personal Information -> Reset Security Token.  A new token will be emailed to you."></info>
+</taskInfo>

@@ -1,0 +1,10 @@
+<results>
+    <result name="Id" type="Regexp">.+</result>
+    <result name="Username" type="Regexp">.+</result>
+    <result name="LastName" type="Regexp">.+</result>
+    <result name="FirstName" type="Regexp">.+</result>
+    <result name="Name" type="Regexp">.+</result>
+    <result name="CommunityNickname" type="Regexp">.+</result>
+    <result name="Alias" type="Regexp">.+</result>
+    <result name="Email" type="Regexp">.+</result>
+</results>

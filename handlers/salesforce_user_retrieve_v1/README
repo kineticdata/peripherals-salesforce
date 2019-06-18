@@ -1,0 +1,55 @@
+== Salesforce_User_Retrieve_V1
+
+Retrieves a Salesforce User with the given Account Id.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Account Id]
+  The Id of the Salesforce User that will be retrieved
+
+=== Results
+[Account Name]
+  The Account Name field of the Account record
+[Account Site]
+  The Account Site field of the Account record
+[Type]
+  The Type field of the Account record
+[Industry]
+  The Industry field of the Account record
+[Annual Revenue]
+  The Annual Revenue field of the Account record
+[Rating]
+  The Rating field of the Account record
+[Phone]
+  The Phone field of the Account record
+[Fax]
+  The Fax field of the Account record
+[Website]
+  The Website field of the Account record
+[Ownership]
+  The Ownership field of the Account record
+
+=== Detailed Description
+
+Retrieves a Salesforce User record with the given Account Id.
+
+This handler essentially has two phases: authentication and record retrieval.
+
+* The handler uses the SOAP API login method to retrieve the authentication
+  details that are required for making the REST API requests.  The required
+  authentication values are instance and session id, these two values are
+  retrieved by the login() helper method in the handler.
+
+* The handler uses the REST API to retrieve the Salesforce user.  The
+  handler's return variables are mapped from the Salesforce fields as show here
+  (with the name of the Salesforce field on the left pointing to the name of the
+  corresponding return variable):
+  - Id          => Account ID
+  - Username          => Username
+  - LastName          => LastName
+  - FirstName      => FirstName
+  - Name      => Name
+  - CommunityNickname        => CommunityNickname
+  - Alias         => Alias
+  - Email           => Email

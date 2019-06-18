@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_account_retrieve" name="Salesforce Account Retrieve" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Retrieves a Salesforce Account record with the given Account Id.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_account_retrieve/1</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="account_id" label="Account Id" required="true"
+          tooltip="The Id of the Salesforce Account record that will be retrieved" />
+    </parameters>
+    <handler name="salesforce_account_retrieve" version="2">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='account_id'>&lt;%= @parameters['account_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Account Name"/>
+        <result name="Account Site"/>
+        <result name="Type"/>
+        <result name="Industry"/>
+        <result name="Annual Revenue"/>
+        <result name="Rating"/>
+        <result name="Phone"/>
+        <result name="Fax"/>
+        <result name="Website"/>
+        <result name="Ownership"/>
+    </results>
+</taskDefinition>

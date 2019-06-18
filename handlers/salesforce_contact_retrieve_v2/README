@@ -1,0 +1,67 @@
+== Salesforce Contact Retrieve
+Retrieves a Salesforce Contact record with the given Contact Id.
+
+=== Parameters
+[Contact Id]
+  The Id of the Salesforce Contact record that will be retrieved
+
+=== Results
+[Salutation]
+  The Salutation field of the Contact record
+[First Name]
+  The First Name field of the Contact record
+[Last Name]
+  The Last Name field of the Contact record
+[Title]
+  The Title field of the Contact record
+[Department]
+  The Department field of the Contact record
+[Mailing Street]
+  The Mailing Street field of the Contact record
+[Mailing City]
+  The Mailing City field of the Contact record
+[Mailing State/Province]
+  The Mailing State/Province field of the Contact record
+[Mailing Zip/Postal Code]
+  The Mailing Zip/Postal Code field of the Contact record
+[Mailing Country]
+  The Mailing Country field of the Contact record
+[Phone]
+  The Phone field of the Contact record
+[Home Phone]
+  The Home Phone field of the Contact record
+[Mobile]
+  The Mobile field of the Contact record
+[Fax]
+  The Fax field of the Contact record
+[Email]
+  The Email field of the Contact record
+[Description]
+  The Description field of the Contact record
+
+=== Sample Configuration
+Contact Id:                      0030H00004mFBNwQAO
+
+=== Detailed Description
+Retrieves a Salesforce Contact's information based on the inputted contact id.
+The first thing that the handler does is obtain an access token using the
+inputted info values, which is used to authenticate the rest of the calls that
+are made. The inputted contact id is then used to build a URL to retrieve the
+contact information, which is then formatted and returned as XML results. If the
+contact id cannot be found or any other errors are encountered, they will be
+caught and raised by the handler.
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

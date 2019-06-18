@@ -1,0 +1,10 @@
+Salesforce Task Create V1.2 (2017-09-07)
+* Due to Salesforce requiring TLS 1.2, this handler is only compatible with Task
+* 4.2.0 and above due to needing a ruby version greater than 2.0.0
+* Update Salesforce API version from v20.0 to v37.0
+* Added Task Id as a result
+* Removed salesforce_instance and added enable_debug_logging as info values
+* General cleanup of execute() and adding more debug logging
+
+Salesforce Task Create V1 (2013-07-22)
+* Initial version.  See README for details.

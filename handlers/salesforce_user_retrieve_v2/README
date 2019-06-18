@@ -1,0 +1,51 @@
+== Salesforce User Retrieve
+Retrieves a Salesforce User with the given Username.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Username]
+  The Username of the Salesforce User that will be retrieved
+
+=== Results
+[Id]
+  The Id of the retrieved user
+[Username]
+  The Username of the retrieved user
+[First Name]
+  The first name of the retrieved user
+[Last Name]
+  The last name of the retrieved user
+[Name]
+  The full name of the retrieved user
+[Community Nickname]
+  The community nickname of the retrieved user
+[Alias]
+  The alias of the retrieved user
+[Email]
+  The email of the retrieved user
+
+
+=== Detailed Description
+This handler uses Salesforce's REST API to retrieve a user from Salesforce. The
+first thing that the handler does is obtain an access token using the inputted
+info values, which is used to authenticate the rest of the calls that are made.
+Next, the handler makes a call to retrieve the user information that corresponds
+to the inputted username and then returns that information in the XML results.
+
+=== Where to find the Client ID, Client Secret, Security Token and Salesforce Instance.
+  1. After logging into Salesforce, the Salesforce Instance can be found in the
+     URL to the left of the salesforce.com (ie. na15, cs13, etc.)
+  2. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  3. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  4. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  5. Create a new Connected App, and fill in the basic information for the app.
+  6. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  7. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  8. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

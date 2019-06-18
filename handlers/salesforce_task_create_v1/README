@@ -1,0 +1,59 @@
+== Salesforce Task Create
+This handler adds a new task (ie. logging a call) to Salesforce.
+
+=== Parameters
+[Requester Email]
+  Email of the user that the new task will be assigned to.
+[Subject]
+  Subject of the new task.
+[Comment]
+  Comment of the new task.
+[Contact Id]
+  The Id of the Contact that this task will be linked with.
+[Account Id]
+  The Id of the Account that this task will be linked with (can't be used at the
+  same time as Opportunity Id).
+[Opportunity Id]
+  The Id of the Opportunity that this task will be linked with (can't be used at
+  the same time as Account Id).
+
+=== Results
+[Task Id]
+  Id for the newly created Task
+
+==== Sample Configuration
+Requester Email:                   test.user@acme.com
+Subject:                           Test Task Name
+Comment:                           Description of the task
+Contact Id:                        00QW0000001S0iAMAS
+Account Id:                        001W0000002ySq5IAE
+Opportunity Id:
+
+=== Detailed Description
+This handler uses Salesforce's REST API to add a new task to Salesforce. The
+first thing that the handler does is obtain an access token using the inputted
+info values, which is used to authenticate the rest of the calls that are made.
+Next, the handler makes a call to change the requesters email into their user id,
+which is what is actually used when assigning a task to a user. Then the task is
+made as a JSON object, with the Subject, Opportunity/Account (opportunity and
+account cannot be used together), Contact, and Comment values being obtained
+from the user inputted data. Lastly, that JSON task object that was just created
+is sent in the body of a REST call to Salesforce, where it is then created and
+stored in your Salesforce account.
+
+=== Where to find the Client ID, Client Secret, Security Token and Salesforce Instance.
+  1. After logging into Salesforce, the Salesforce Instance can be found in the
+     URL to the left of the salesforce.com (ie. na15, cs13, etc.)
+  2. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  3. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  4. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  5. Create a new Connected App, and fill in the basic information for the app.
+  6. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  7. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  8. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

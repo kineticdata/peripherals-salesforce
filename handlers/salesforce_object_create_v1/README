@@ -1,0 +1,51 @@
+== Salesforce Object Create
+Generically creates a Salesforce object given a type and a JSON body.
+
+=== Parameters
+[Type]
+  The type of object to create (ie. Account, Case, Opportunity, etc).
+[JSON Body]
+  A JSON object containing the fields and values that should be populated in the
+  new object.
+
+=== Results
+[Id]
+  The Id of the Salesforce object that was created
+
+=== Sample Configuration
+Type:                          Contact
+JSON Body:                     {"FirstName": "Test", "LastName": "User"}
+
+=== Detailed Description
+Creates a generic Salesforce object given a type and a JSON body and returns the
+Id of that newly created object if successful. The first thing that the handler
+does is obtain an access token using the inputted info values, which is used to
+authenticate the rest of the calls that are made. The object type and JSON body
+are then used to build a REST call that will be sent to Salesforce to create the
+object. If successful, the handler will return the Id of the newly created
+object.
+
+=== Finding Salesforce Objects and Fields
+  - The SOAP API Documentation is the best way at this point to find the
+  Salesforce standard objects and fields
+    - Can be found here - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_list.htm
+  - Going to Setup > Customize (under Build) > {Object Name} > Fields gets you a
+  list of Field Labels/Names (this view should also show custom fields)
+  - Lastly, doing an API retrieve of an already existing object of the type you
+  want to create should show all of the fields available on the object (can use
+  salesforce_object_retrieve to achieve this)
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

@@ -1,0 +1,5 @@
+Salesforce Case Create V2 (2017-11-17)
+* Changes made to utilize the salesforce REST API.  See README for details.
+
+Salesforce Case Create V1 (2015-04-13)
+* Initial version.  See README for details.

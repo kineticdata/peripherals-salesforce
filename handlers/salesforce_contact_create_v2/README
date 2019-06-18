@@ -1,0 +1,82 @@
+== Salesforce Contact Create
+Creates a Salesforce Contact record with the given parameters and returns the
+Contact Id of the created Contact record.
+
+=== Parameters
+[Salutation]
+  Sets the Salutation field of the Contact record
+[First Name]
+  Sets the First Name field of the Contact record
+[Last Name]
+  Sets the Last Name field of the Contact record
+[Title]
+  Sets the Title field of the Contact record
+[Department]
+  Sets the Department field of the Contact record
+[Mailing Street]
+  Sets the Mailing Street field of the Contact record
+[Mailing City]
+  Sets the Mailing City field of the Contact record
+[Mailing State/Province]
+  Sets the Mailing State/Province field of the Contact record
+[Mailing Zip/Postal Code]
+  Sets the Mailing Zip/Postal Code field of the Contact record
+[Mailing Country]
+  Sets the Mailing Country field of the Contact record
+[Phone]
+  Sets the Phone field of the Contact record
+[Home Phone]
+  Sets the Home Phone field of the Contact record
+[Mobile]
+  Sets the Mobile field of the Contact record
+[Fax]
+  Sets the Fax field of the Contact record
+[Email]
+  Sets the Email field of the Contact record
+[Description]
+  Sets the Description field of the Contact record
+
+=== Results
+[Contact Id]
+  The Id of the Salesforce Contact record that was created
+
+=== Sample Configuration
+Salutation:                      Mr
+First Name:                      Test
+Last Name:                       User
+Title:                           Department Lead
+Department:                      Developer
+Mailing Street:                  1234 Cherry Ln
+Mailing City:                    St Paul
+Mailing State/Province:          MN
+Mailing Zip/Postal Code:         55101
+Mailing Country:                 USA
+Phone:                           555-555-5555
+Home Phone:                      555-555-5555
+Mobile:                          444-444-4444
+Fax:                             333-333-3333
+Email:                           test.user@acme.com
+Description:                     A test user
+
+=== Detailed Description
+Creates a Salesforce Contact record with the given parameters and returns the
+Contact Id of the created Contact record. The first thing that the handler does
+is obtain an access token using the inputted info values, which is used to
+authenticate the rest of the calls that are made. The parameter inputs are then
+used to build a Contact object which is sent to the Salesforce REST API to
+create a Contact with those values.
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

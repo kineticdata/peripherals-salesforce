@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskInfo version="1.0">
+    <info name="username" description="The username/email used to log into Salesforce." />
+    <info name="password" type="encrypted" description="The password used to log into Salesforce." />
+    <info name="security_token" type="encrypted" description="A security token that is appended onto the end of the password. Can be obtained from Salesforce by going to 'Reset my Security Token' under personal settings." />
+    <info name="client_id" description="The client id of the application. Found under Manage Apps in setup." />
+    <info name="client_secret" type="encrypted"description="The client secret of the application. Found under Manage Apps in setup." />
+    <info name="enable_debug_logging" description="Enable debug logging if the value is set to 'Yes'.">No</info>
+</taskInfo>

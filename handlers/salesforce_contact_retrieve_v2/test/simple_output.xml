@@ -1,0 +1,18 @@
+<results>
+    <result name="Salutation" type="Regexp">.+</result>
+    <result name="First Name" type="Regexp">.+</result>
+    <result name="Last Name" type="Regexp">.+</result>
+    <result name="Title" type="Regexp">.+</result>
+    <result name="Department" type="Regexp">.+</result>
+    <result name="Mailing Street" type="Regexp">.+</result>
+    <result name="Mailing City" type="Regexp">.+</result>
+    <result name="Mailing State/Province" type="Regexp">.+</result>
+    <result name="Mailing Zip/Postal Code" type="Regexp">.+</result>
+    <result name="Mailing Country" type="Regexp">.+</result>
+    <result name="Phone" type="Regexp">.+</result>
+    <result name="Home Phone" type="Regexp">.+</result>
+    <result name="Mobile" type="Regexp">.+</result>
+    <result name="Fax" type="Regexp">.+</result>
+    <result name="Email" type="Regexp">.+</result>
+    <result name="Description" type="Regexp">.+</result>
+</results>

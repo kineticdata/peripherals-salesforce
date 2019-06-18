@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_contact_retrieve" name="Salesforce Contact Retrieve" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Retrieves a Salesforce Contact record with the given Contact Id.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_contact_retrieve/1</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="contact_id" label="Contact Id" required="true"
+          tooltip="The Id of the Salesforce Contact record that will be retrieved" />
+    </parameters>
+    <handler name="salesforce_contact_retrieve" version="2">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='contact_id'>&lt;%= @parameters['contact_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Salutation"/>
+        <result name="First Name"/>
+        <result name="Last Name"/>
+        <result name="Title"/>
+        <result name="Department"/>
+        <result name="Mailing Street"/>
+        <result name="Mailing City"/>
+        <result name="Mailing State/Province"/>
+        <result name="Mailing Zip/Postal Code"/>
+        <result name="Mailing Country"/>
+        <result name="Phone"/>
+        <result name="Home Phone"/>
+        <result name="Mobile"/>
+        <result name="Fax"/>
+        <result name="Email"/>
+        <result name="Description"/>
+    </results>
+</taskDefinition>

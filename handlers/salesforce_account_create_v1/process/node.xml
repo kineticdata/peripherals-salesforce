@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_account_create" name="Salesforce Account Create" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Creates a Salesforce Account record with the given parameters and returns the Account Id of the created Account record.  The parameters are mapped directly to their respective fields.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_account_create/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="account_name" label="Account Name" required="true"
+          tooltip="Sets the Account Name field of the Account record" />
+        <parameter id="account_site" label="Account Site" required="false"
+          tooltip="Sets the Account Site field of the Account record" />
+        <parameter id="type" label="Type" required="false"
+          tooltip="Sets the Type field of the Account record" />
+        <parameter id="industry" label="Industry" required="false"
+          tooltip="Sets the Industry field of the Account record" />
+        <parameter id="annual_revenue" label="Annual Revenue" required="false"
+          tooltip="Sets the Annual Revenue field of the Account record" />
+        <parameter id="rating" label="Rating" required="false"
+          tooltip="Sets the Rating field of the Account record" />
+        <parameter id="phone" label="Phone" required="false"
+          tooltip="Sets the Phone field of the Account record" />
+        <parameter id="fax" label="Fax" required="false"
+          tooltip="Sets the Fax field of the Account record" />
+        <parameter id="website" label="Website" required="false"
+          tooltip="Sets the Website field of the Account record" />
+        <parameter id="ownership" label="Ownership" required="false"
+          tooltip="Sets the Ownership field of the Account record" />
+    </parameters>
+    <handler name="salesforce_account_create" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="token">&lt;%= @info['token'] %&gt;</info>
+        </infos>
+        <fields>
+            <field name='Name'>&lt;%= @parameters['account_name'] %&gt;</field>
+            <field name='Site'>&lt;%= @parameters['account_site'] %&gt;</field>
+            <field name='Type'>&lt;%= @parameters['type'] %&gt;</field>
+            <field name='Industry'>&lt;%= @parameters['industry'] %&gt;</field>
+            <field name='AnnualRevenue'>&lt;%= @parameters['annual_revenue'] %&gt;</field>
+            <field name='Rating'>&lt;%= @parameters['rating'] %&gt;</field>
+            <field name='Phone'>&lt;%= @parameters['phone'] %&gt;</field>
+            <field name='Fax'>&lt;%= @parameters['fax'] %&gt;</field>
+            <field name='Website'>&lt;%= @parameters['website'] %&gt;</field>
+            <field name='Ownership'>&lt;%= @parameters['ownership'] %&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml">
+        <result name="Account Id"/>
+    </results>
+</taskDefinition>

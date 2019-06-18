@@ -1,0 +1,11 @@
+<results>
+    <result name="Opportunity Name" type="Regexp">.+</result>
+    <result name="Close Date" type="Regexp">.+</result>
+    <result name="Stage" type="Regexp">.+</result>
+    <result name="Private" type="Regexp">.+</result>
+    <result name="Type" type="Regexp">.+</result>
+    <result name="Lead Source" type="Regexp">.+</result>
+    <result name="Amount" type="Regexp">.+</result>
+    <result name="Next Step" type="Regexp">.+</result>
+    <result name="Probability" type="Regexp">.+</result>
+</results>

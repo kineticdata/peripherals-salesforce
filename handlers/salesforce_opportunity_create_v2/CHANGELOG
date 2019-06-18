@@ -1,0 +1,9 @@
+Salesforce Contact Create V2 (2017-09-11)
+* Due to Salesforce requiring TLS 1.2, this handler is only compatible with Task
+* 4.2.0 and above due to needing a ruby version greater than 2.0.0
+* Update Salesforce API version from v20.0 to v37.0
+* Updated to fully use the REST API (including authentication)
+* Add more logging while executing
+
+Salesforce Opportunity Create V1 (2011-05-06)
+* Initial version.  See README for details.

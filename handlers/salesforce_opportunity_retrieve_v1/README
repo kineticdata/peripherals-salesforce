@@ -1,0 +1,52 @@
+== Salesforce_Opportunity_Retrieve_V1
+Retrieves a Salesforce Opportunity record with the given parameters.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Opportunity Id]
+  The Id of the Salesforce Opportunity record that will be retrieved
+
+=== Results
+[Opportunity Name]
+  The Opportunity Name field of the Opportunity record
+[Close Date]
+  The Close Date field of the Opportunity record
+[Stage]
+  The Stage field of the Opportunity record
+[Private]
+  The Private field of the Opportunity record
+[Type]
+  The Type field of the Opportunity record
+[Lead Source]
+  The Lead Source field of the Opportunity record
+[Amount]
+  The Amount field of the Opportunity record
+[Next Step]
+  The Next Step field of the Opportunity record
+[Probability]
+  The Probability field of the Opportunity record
+
+=== Detailed Description
+Retrieves a Salesforce Opportunity record with the given parameters.
+
+This handler essentially has two phases: authentication and record retrieval.
+
+* The handler uses the SOAP API login method to retrieve the authentication
+  details that are required for making the REST API requests.  The required
+  authentication values are instance and session id, these two values are
+  retrieved by the login() helper method in the handler.
+
+* The handler uses the REST API to retrieve the Salesforce record.  The
+  handler's return variables are mapped from the Salesforce fields as show here
+  (with the name of the Salesforce field on the left pointing to the name of the
+  corresponding return variable):
+  - Name         => Opportunity Name
+  - CloseDate    => Close Date
+  - StageName    => Stage
+  - IsPrivate    => Private
+  - Type         => Type
+  - LeadSource   => Lead Source
+  - Amount       => Amount
+  - NextStep     => Next Step
+  - Probability  => Probability

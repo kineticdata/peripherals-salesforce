@@ -1,0 +1,12 @@
+<results>
+    <result name="Account Name" type="Regexp">.+</result>
+    <result name="Account Site" type="Regexp">.+</result>
+    <result name="Type" type="Regexp">.+</result>
+    <result name="Industry" type="Regexp">.+</result>
+    <result name="Annual Revenue" type="Regexp">.+</result>
+    <result name="Rating" type="Regexp">.+</result>
+    <result name="Phone" type="Regexp">.+</result>
+    <result name="Fax" type="Regexp">.+</result>
+    <result name="Website" type="Regexp">.+</result>
+    <result name="Ownership" type="Regexp">.+</result>
+</results>

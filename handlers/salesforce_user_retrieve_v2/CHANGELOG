@@ -1,0 +1,6 @@
+Salesforce User Retrieve V2 (2017-09-11)
+* Changes made to utilize the salesforce REST API.
+* Changed to search by username instead of user id
+
+Salesforce User Retrieve V1 (2017-07-13)
+* Initial version.  See README for details.

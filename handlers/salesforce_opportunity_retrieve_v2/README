@@ -1,0 +1,53 @@
+== Salesforce Opportunity Retrieve
+Retrieves a Salesforce Opportunity record based on the inputted id.
+
+=== Parameters
+[Opportunity Id]
+  The Id of the Salesforce Opportunity record that will be retrieved
+
+=== Results
+[Opportunity Name]
+  The Opportunity Name field of the Opportunity record
+[Close Date]
+  The Close Date field of the Opportunity record (in the form of YYYY-MM-DD)
+[Stage]
+  The Stage field of the Opportunity record
+[Private]
+  The Private field of the Opportunity record
+[Type]
+  The Type field of the Opportunity record
+[Lead Source]
+  The Lead Source field of the Opportunity record
+[Amount]
+  The Amount field of the Opportunity record
+[Next Step]
+  The Next Step field of the Opportunity record
+[Probability]
+  The Probability field of the Opportunity record
+
+=== Sample Configuration
+Opportunity Id:                   0060H00000jtPC1QAM
+
+=== Detailed Description
+Retrieves a Salesforce Opportunity's information based on the inputted id.
+The first thing that the handler does is obtain an access token using the
+inputted info values, which is used to authenticate the rest of the calls that
+are made. The inputted opportunity id is then used to build a URL to retrieve
+the opportunity information, which is then formatted and returned as XML results.
+If the opportunity id cannot be found or any other errors are encountered, they
+will be caught and raised by the handler.
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

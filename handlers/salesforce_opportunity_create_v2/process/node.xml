@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_opportunity_create" name="Salesforce Opportunity Create" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Creates a Salesforce Opportunity record with the given parameters and returns the id of the new Opportunity record.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_opportunity_create/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="opportunity_name" label="Opportunity Name" required="true"
+          tooltip="Sets the Opportunity Name field of the Opportunity record" />
+        <parameter id="close_date" label="Close Date" required="true"
+          tooltip="Sets the Close Date field of the Opportunity record (in the form of YYYY-MM-DD)" />
+        <parameter id="stage" label="Stage" required="true"
+          tooltip="Sets the Stage field of the Opportunity record" />
+        <parameter id="private" label="Private" required="false"
+          tooltip="Sets the Private field of the Opportunity record" />
+        <parameter id="type" label="Type" required="false"
+          tooltip="Sets the Type field of the Opportunity record" />
+        <parameter id="lead_source" label="Lead Source" required="false"
+          tooltip="Sets the Lead Source field of the Opportunity record" />
+        <parameter id="amount" label="Amount" required="false"
+          tooltip="Sets the Amount field of the Opportunity record" />
+        <parameter id="next_step" label="Next Step" required="false"
+          tooltip="Sets the Next Step field of the Opportunity record" />
+        <parameter id="probability" label="Probability" required="false"
+          tooltip="Sets the Probability field of the Opportunity record" />
+    </parameters>
+    <handler name="salesforce_opportunity_create" version="2">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='opportunity_name'>&lt;%= @parameters['opportunity_name'] %&gt;</parameter>
+            <parameter name='close_date'>&lt;%= @parameters['close_date'] %&gt;</parameter>
+            <parameter name='stage'>&lt;%= @parameters['stage'] %&gt;</parameter>
+            <parameter name='private'>&lt;%= @parameters['private'] %&gt;</parameter>
+            <parameter name='type'>&lt;%= @parameters['type'] %&gt;</parameter>
+            <parameter name='lead_source'>&lt;%= @parameters['lead_source'] %&gt;</parameter>
+            <parameter name='amount'>&lt;%= @parameters['amount'] %&gt;</parameter>
+            <parameter name='next_step'>&lt;%= @parameters['next_step'] %&gt;</parameter>
+            <parameter name='probability'>&lt;%= @parameters['probability'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Opportunity Id"/>
+    </results>
+</taskDefinition>

@@ -1,0 +1,55 @@
+== Salesforce_Opportunity_Create_V1
+Creates a Salesforce Opportunity record with the given parameters and returns
+the id of the new Opportunity record.  The parameters are mapped directly to
+their respective fields.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Opportunity Name]
+  Sets the Opportunity Name field of the Opportunity record
+[Close Date]
+  Sets the Close Date field of the Opportunity record
+[Stage]
+  Sets the Stage field of the Opportunity record
+[Private]
+  Sets the Private field of the Opportunity record
+[Type]
+  Sets the Type field of the Opportunity record
+[Lead Source]
+  Sets the Lead Source field of the Opportunity record
+[Amount]
+  Sets the Amount field of the Opportunity record
+[Next Step]
+  Sets the Next Step field of the Opportunity record
+[Probability]
+  Sets the Probability field of the Opportunity record
+
+=== Results
+[Opportunity Id]
+  The Id of the Salesforce Opportunity record that was created
+
+=== Detailed Description
+Creates a Salesforce Opportunity record with the given parameters and returns
+the id of the new Opportunity record.
+
+This handler essentially has two phases: authentication and record creation.
+
+* The handler uses the SOAP API login method to retrieve the authentication
+  details that are required for making the REST API requests.  The required
+  authentication values are instance and session id, these two values are
+  retrieved by the login() helper method in the handler.
+
+* The handler uses the REST API to create the Salesforce record.  The Salesforce
+  record simply contains mappings provided by the @field_values instance
+  variable.  The handler's parameters are mapped to Salesforce fields in the
+  node.xml as show here:
+  - Opportunity Name  => Name
+  - Close Date        => CloseDate
+  - Stage             => StageName
+  - Private           => IsPrivate
+  - Type              => Type
+  - Lead Source       => LeadSource
+  - Amount            => Amount
+  - Next Step         => NextStep
+  - Probability       => Probability

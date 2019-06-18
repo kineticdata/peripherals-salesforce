@@ -1,0 +1,37 @@
+== Salesforce User Disable
+Disables a user account in Salesforce.
+
+=== Parameters
+[Username]
+  Username of the user that you want to disable.
+
+=== Results
+  No results are returned
+
+==== Sample Configuration
+Username:                   joe.user@acme.com
+
+=== Detailed Description
+This handler uses Salesforce's REST API to disable a user in Salesforce. The
+first thing that the handler does is obtain an access token using the inputted
+info values, which is used to authenticate the rest of the calls that are made.
+Next, the handler makes a call to retrieve the user id that corresponds to the
+inputted username. One last REST call is then made to Salesforce using that user
+id to disable the desired user by setting the IsActive flag to false.
+
+=== Where to find the Client ID, Client Secret, Security Token and Salesforce Instance.
+  1. After logging into Salesforce, the Salesforce Instance can be found in the
+     URL to the left of the salesforce.com (ie. na15, cs13, etc.)
+  2. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  3. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  4. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  5. Create a new Connected App, and fill in the basic information for the app.
+  6. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  7. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  8. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

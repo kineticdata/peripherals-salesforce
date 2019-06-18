@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_contact_create" name="Salesforce Contact Create" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Creates a Salesforce Contact record with the given parameters and returns the Contact Id of the created Contact record.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_contact_create/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="salutation" label="Salutation" required="false"
+          tooltip="Sets the Salutation field of the Contact record" />
+        <parameter id="first_name" label="First Name" required="true"
+          tooltip="Sets the First Name field of the Contact record" />
+        <parameter id="last_name" label="Last Name" required="true"
+          tooltip="Sets the Last Name field of the Contact record" />
+        <parameter id="title" label="Title" required="false"
+          tooltip="Sets the Title field of the Contact record" />
+        <parameter id="department" label="Department" required="false"
+          tooltip="Sets the Department field of the Contact record" />
+        <parameter id="mailing_street" label="Mailing Street" required="false"
+          tooltip="Sets the Mailing Street field of the Contact record" />
+        <parameter id="mailing_city" label="Mailing City" required="false"
+          tooltip="Sets the Mailing City field of the Contact record" />
+        <parameter id="mailing_state" label="Mailing State/Province" required="false"
+          tooltip="Sets the Mailing State/Province field of the Contact record" />
+        <parameter id="mailing_postal_code" label="Mailing Zip/Postal Code" required="false"
+          tooltip="Sets the Mailing Zip/Postal Code field of the Contact record" />
+        <parameter id="mailing_country" label="Mailing Country" required="false"
+          tooltip="Sets the Mailing Country field of the Contact record" />
+        <parameter id="phone" label="Phone" required="false"
+          tooltip="Sets the Phone field of the Contact record" />
+        <parameter id="home_phone" label="Home Phone" required="false"
+          tooltip="Sets the Home Phone field of the Contact record" />
+        <parameter id="mobile" label="Mobile" required="false"
+          tooltip="Sets the Mobile field of the Contact record" />
+        <parameter id="fax" label="Fax" required="false"
+          tooltip="Sets the Fax field of the Contact record" />
+        <parameter id="email" label="Email" required="false"
+          tooltip="Sets the Email field of the Contact record" />
+        <parameter id="description" label="Description" required="false"
+          tooltip="Sets the Description field of the Contact record" />
+    </parameters>
+    <handler name="salesforce_contact_create" version="2">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='salutation'>&lt;%= @parameters['salutation'] %&gt;</parameter>
+            <parameter name='first_name'>&lt;%= @parameters['first_name'] %&gt;</parameter>
+            <parameter name='last_name'>&lt;%= @parameters['last_name'] %&gt;</parameter>
+            <parameter name='title'>&lt;%= @parameters['title'] %&gt;</parameter>
+            <parameter name='department'>&lt;%= @parameters['department'] %&gt;</parameter>
+            <parameter name='mailing_street'>&lt;%= @parameters['mailing_street'] %&gt;</parameter>
+            <parameter name='mailing_city'>&lt;%= @parameters['mailing_city'] %&gt;</parameter>
+            <parameter name='mailing_state'>&lt;%= @parameters['mailing_state'] %&gt;</parameter>
+            <parameter name='mailing_postal_code'>&lt;%= @parameters['mailing_postal_code'] %&gt;</parameter>
+            <parameter name='mailing_country'>&lt;%= @parameters['mailing_country'] %&gt;</parameter>
+            <parameter name='phone'>&lt;%= @parameters['phone'] %&gt;</parameter>
+            <parameter name='home_phone'>&lt;%= @parameters['home_phone'] %&gt;</parameter>
+            <parameter name='mobile'>&lt;%= @parameters['mobile'] %&gt;</parameter>
+            <parameter name='fax'>&lt;%= @parameters['fax'] %&gt;</parameter>
+            <parameter name='email'>&lt;%= @parameters['email'] %&gt;</parameter>
+            <parameter name='description'>&lt;%= @parameters['description'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Contact Id"/>
+    </results>
+</taskDefinition>

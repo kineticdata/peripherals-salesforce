@@ -1,0 +1,75 @@
+== Salesforce_Contact_Retrieve_V1
+
+Retrieves a Salesforce Contact record with the given Contact Id.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Contact Id]
+  The Id of the Salesforce Contact record that will be retrieved
+
+=== Results
+[Salutation]
+  The Salutation field of the Contact record
+[First Name]
+  The First Name field of the Contact record
+[Last Name]
+  The Last Name field of the Contact record
+[Title]
+  The Title field of the Contact record
+[Department]
+  The Department field of the Contact record
+[Mailing Street]
+  The Mailing Street field of the Contact record
+[Mailing City]
+  The Mailing City field of the Contact record
+[Mailing State/Province]
+  The Mailing State/Province field of the Contact record
+[Mailing Zip/Postal Code]
+  The Mailing Zip/Postal Code field of the Contact record
+[Mailing Country]
+  The Mailing Country field of the Contact record
+[Phone]
+  The Phone field of the Contact record
+[Home Phone]
+  The Home Phone field of the Contact record
+[Mobile]
+  The Mobile field of the Contact record
+[Fax]
+  The Fax field of the Contact record
+[Email]
+  The Email field of the Contact record
+[Description]
+  The Description field of the Contact record
+
+=== Detailed Description
+
+Retrieves a Salesforce Contact record with the given Contact Id.
+
+This handler essentially has two phases: authentication and record retrieval.
+
+* The handler uses the SOAP API login method to retrieve the authentication
+  details that are required for making the REST API requests.  The required
+  authentication values are instance and session id, these two values are
+  retrieved by the login() helper method in the handler.
+
+* The handler uses the REST API to retrieve the Salesforce record.  The
+  handler's return variables are mapped from the Salesforce fields as show here
+  (with the name of the Salesforce field on the left pointing to the name of the
+  corresponding return variable):
+  - Salutation        => Salutation
+  - FirstName         => First Name
+  - LastName          => Last Name
+  - Title             => Title
+  - Department        => Department
+  - MailingStreet     => Mailing Street
+  - MailingCity       => Mailing City
+  - MailingState      => Mailing State/Province
+  - MailingPostalCode => Mailing Zip/Postal Code
+  - MailingCountry    => Mailing Country
+  - Phone             => Phone
+  - HomePhone         => Home Phone
+  - MobilePhone       => Mobile
+  - Fax               => Fax
+  - Email             => Email
+  - Description       => Description

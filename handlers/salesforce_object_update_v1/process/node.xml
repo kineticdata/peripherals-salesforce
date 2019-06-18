@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_object_update" name="Salesforce Object Update" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Generically updates a Salesforce object with a given type, id, and JSON body.</description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+      <parameter id="type" label="Type" required="true"
+        tooltip="The type of object to update (ie. Account, Case, Opportunity, etc)." />
+      <parameter id="id" label="Id" required="true"
+        tooltip="The Id of the Salesforce object that will be updated." />
+      <parameter id="json_body" label="JSON Body" required="true"
+        tooltip="A JSON object containing the fields and values that should be updated in the existing object." />
+    </parameters>
+    <handler name="salesforce_object_update" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='type'>&lt;%= @parameters['type'] %&gt;</parameter>
+            <parameter name='id'>&lt;%= @parameters['id'] %&gt;</parameter>
+            <parameter name='json_body'>&lt;%= @parameters['json_body'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml"/>
+</taskDefinition>

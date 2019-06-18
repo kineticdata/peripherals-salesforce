@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_object_retrieve" name="Salesforce Object Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Generically retrieves a Salesforce object given a type and an id.</description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="type" label="Type" required="true"
+          tooltip="The type of object to retrieve (ie. Account, Case, Opportunity, etc)." />
+        <parameter id="id" label="Id" required="true"
+          tooltip="The Id of the Salesforce object that will be retrieved." />
+    </parameters>
+    <handler name="salesforce_object_retrieve" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='type'>&lt;%= @parameters['type'] %&gt;</parameter>
+            <parameter name='id'>&lt;%= @parameters['id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Object JSON"/>
+    </results>
+</taskDefinition>

@@ -1,0 +1,9 @@
+Salesforce User Disable V1.1 (2017-09-12)
+* Due to Salesforce requiring TLS 1.2, this handler is only compatible with Task
+  4.2.0 and above due to needing a ruby version greater than 2.0.0
+* Update Salesforce API version from v20.0 to v37.0
+* Removed salesforce_instance as an info value
+* General cleanup of execute() and adding more debug logging
+
+Salesforce User Disable V1 (2013-09-09)
+* Initial version.  See README for details.

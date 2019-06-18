@@ -1,0 +1,40 @@
+== Salesforce Object Retrieve
+Generically retrieves a Salesforce object given a type and an id.
+
+=== Parameters
+[Type]
+  The type of object to retrieve (ie. Account, Case, Opportunity, etc).
+[JSON Body]
+  The Id of the Salesforce object that will be retrieved.
+
+=== Results
+[Object JSON]
+  A JSON representation of the retrieved Salesforce object
+
+=== Sample Configuration
+Type:                       Opportunity
+Id:                         0060H00000jtPC1QAM
+
+=== Detailed Description
+Retrieves a generic Salesforce object given a type and an id and returns a JSON
+representation of the object if it is found. The first thing that the handler
+does is obtain an access token using the inputted info values, which is used to
+authenticate the rest of the calls that are made. The object type and id are
+then used to build a REST call that will be sent to Salesforce to retrieve the
+object and the results of that call will be used to return the JSON object as
+the handler results.
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

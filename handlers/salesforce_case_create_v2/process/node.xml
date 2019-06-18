@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_case_create" name="Salesforce Case Create" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>
+        Creates a Salesforce Account Case record with the given parameters and returns the Case Id of the created record. The parameters are mapped directly to their respective fields.
+    </description>
+    <helpurl>http://http://community.kineticdata.com/?title=20_Kinetic_Task/Task_Handlers_%26_Sources/Salesforce/Salesforce_Case_Create</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="accountid" label="Account ID" required="true"
+          tooltip="Sets the Account ID field of the Account the case is being created for." />
+        <parameter id="contactid" label="Contact ID" required="false"
+          tooltip="Sets the Contact ID. Contact must exist in order to set this." />
+        <parameter id="type" label="Type" required="false"
+          tooltip="Type of the case." />
+        <parameter id="reason" label="Reason" required="false"
+          tooltip="Reason for the creation of the case." />
+        <parameter id="status" label="Status" required="true"
+          tooltip="Status of the case.">New</parameter>
+        <parameter id="priority" label="Priority" required="false"
+          tooltip="Priority of the case.">Medium</parameter>
+        <parameter id="origin" label="Origin" required="false"
+          tooltip="Origin of the case.">Web</parameter>
+        <parameter id="subject" label="Subject" required="false"
+          tooltip="Subject of the case." />
+        <parameter id="description" label="Description" required="false"
+          tooltip="Description of the case." />
+    </parameters>
+    <handler name="salesforce_case_create" version="2">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='accountid'>&lt;%= @parameters['accountid'] %&gt;</parameter>
+            <parameter name='contactid'>&lt;%= @parameters['contactid'] %&gt;</parameter>
+            <parameter name='type'>&lt;%= @parameters['type'] %&gt;</parameter>
+            <parameter name='reason'>&lt;%= @parameters['reason'] %&gt;</parameter>
+            <parameter name='status'>&lt;%= @parameters['status'] %&gt;</parameter>
+            <parameter name='priority'>&lt;%= @parameters['priority'] %&gt;</parameter>
+            <parameter name='origin'>&lt;%= @parameters['origin'] %&gt;</parameter>
+            <parameter name='subject'>&lt;%= @parameters['subject'] %&gt;</parameter>
+            <parameter name='description'>&lt;%= @parameters['description'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Case Id"></result>
+    </results>
+</taskDefinition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_task_create" name="Salesforce Task Create" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Create a new task in Salesforce.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="requester_email" label="Requester Email" required="true"
+            tooltip="Email of the user that the new task will be assigned to." />
+        <parameter id="subject" label="Subject" required="true"
+            tooltip="Subject of the new task." />
+        <parameter id="comment" label="Comment" required="false"
+            tooltip="Comment for the new task."/>
+        <parameter id="contact_id" label="Contact Id" required="false"
+            tooltip="The Id of the Contact that this task will be linked with." />
+        <parameter id="account_id" label="Account Id" required="false"
+            tooltip="The Id of the Account that this task will be linked with (can't be used at the same time as Opportunity Id)." />
+        <parameter id="opportunity_id" label="Opportunity Id" required="false"
+            tooltip="The Id of the Opportunity that this task will be linked with (can't be used at the same time as Account Id)." />
+    </parameters>
+    <handler name="salesforce_task_create" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="requester_email">&lt;%= @parameters['requester_email'] %&gt;</parameter>
+            <parameter name="subject">&lt;%= @parameters['subject'] %&gt;</parameter>
+            <parameter name="comment">&lt;%= @parameters['comment'] %&gt;</parameter>
+            <parameter name="contact_id">&lt;%= @parameters['contact_id'] %&gt;</parameter>
+            <parameter name="account_id">&lt;%= @parameters['account_id'] %&gt;</parameter>
+            <parameter name="opportunity_id">&lt;%= @parameters['opportunity_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+      <result name="Task Id" />
+    </results>
+</taskDefinition>

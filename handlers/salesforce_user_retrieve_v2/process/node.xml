@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_user_retrieve" name="Salesforce User Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Retrieves a Salesforce User record with the given Username.
+    </description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="username" label="Username" required="true"
+          tooltip="The Username of the Salesforce User that will be retrieved" />
+    </parameters>
+    <handler name="salesforce_user_retrieve" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="security_token">&lt;%= @info['security_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='username'>&lt;%= @parameters['username'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Id"/>
+        <result name="Username"/>
+        <result name="Last Name"/>
+        <result name="First Name"/>
+        <result name="Name"/>
+        <result name="Community Nickname"/>
+        <result name="Alias"/>
+        <result name="Email"/>
+    </results>
+</taskDefinition>

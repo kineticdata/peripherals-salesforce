@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_contact_update" name="Salesforce Contact Update" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Updates a Salesforce Contact record with the given parameters and returns the Contact Id of the updated Contact record.  The parameters are mapped directly to their respective fields.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_contact_update/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="contact_id" label="Contact Id" required="true"
+          tooltip="The Id of the Salesforce Contact record that will be updated" />
+        <parameter id="salutation" label="Salutation" required="true"
+          tooltip="Sets the Salutation field of the Contact record" />
+        <parameter id="first_name" label="First Name" required="true"
+          tooltip="Sets the First Name field of the Contact record" />
+        <parameter id="last_name" label="Last Name" required="true"
+          tooltip="Sets the Last Name field of the Contact record" />
+        <parameter id="title" label="Title" required="false"
+          tooltip="Sets the Title field of the Contact record" />
+        <parameter id="department" label="Department" required="false"
+          tooltip="Sets the Department field of the Contact record" />
+        <parameter id="mailing_street" label="Mailing Street" required="false"
+          tooltip="Sets the Mailing Street field of the Contact record" />
+        <parameter id="mailing_city" label="Mailing City" required="false"
+          tooltip="Sets the Mailing City field of the Contact record" />
+        <parameter id="mailing_state" label="Mailing State/Province" required="false"
+          tooltip="Sets the Mailing State/Province field of the Contact record" />
+        <parameter id="mailing_postal_code" label="Mailing Zip/Postal Code" required="false"
+          tooltip="Sets the Mailing Zip/Postal Code field of the Contact record" />
+        <parameter id="mailing_country" label="Mailing Country" required="false"
+          tooltip="Sets the Mailing Country field of the Contact record" />
+        <parameter id="phone" label="Phone" required="false"
+          tooltip="Sets the Phone field of the Contact record" />
+        <parameter id="home_phone" label="Home Phone" required="false"
+          tooltip="Sets the Home Phone field of the Contact record" />
+        <parameter id="mobile" label="Mobile" required="false"
+          tooltip="Sets the Mobile field of the Contact record" />
+        <parameter id="fax" label="Fax" required="false"
+          tooltip="Sets the Fax field of the Contact record" />
+        <parameter id="email" label="Email" required="false"
+          tooltip="Sets the Email field of the Contact record" />
+        <parameter id="description" label="Description" required="false"
+          tooltip="Sets the Description field of the Contact record" />
+    </parameters>
+    <handler name="salesforce_contact_update" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="token">&lt;%= @info['token'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='contact_id'>&lt;%= @parameters['contact_id'] %&gt;</parameter>
+        </parameters>
+        <fields>
+            <field name='Salutation'>&lt;%= @parameters['salutation'] %&gt;</field>
+            <field name='FirstName'>&lt;%= @parameters['first_name'] %&gt;</field>
+            <field name='LastName'>&lt;%= @parameters['last_name'] %&gt;</field>
+            <field name='Title'>&lt;%= @parameters['title'] %&gt;</field>
+            <field name='Department'>&lt;%= @parameters['department'] %&gt;</field>
+            <field name='MailingStreet'>&lt;%= @parameters['mailing_street'] %&gt;</field>
+            <field name='MailingCity'>&lt;%= @parameters['mailing_city'] %&gt;</field>
+            <field name='MailingState'>&lt;%= @parameters['mailing_state'] %&gt;</field>
+            <field name='MailingPostalCode'>&lt;%= @parameters['mailing_postal_code'] %&gt;</field>
+            <field name='MailingCountry'>&lt;%= @parameters['mailing_country'] %&gt;</field>
+            <field name='Phone'>&lt;%= @parameters['phone'] %&gt;</field>
+            <field name='HomePhone'>&lt;%= @parameters['home_phone'] %&gt;</field>
+            <field name='MobilePhone'>&lt;%= @parameters['mobile'] %&gt;</field>
+            <field name='Fax'>&lt;%= @parameters['fax'] %&gt;</field>
+            <field name='Email'>&lt;%= @parameters['email'] %&gt;</field>
+            <field name='Description'>&lt;%= @parameters['description'] %&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml"/>
+</taskDefinition>

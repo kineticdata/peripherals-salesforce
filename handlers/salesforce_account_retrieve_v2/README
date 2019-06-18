@@ -1,0 +1,55 @@
+== Salesforce Account Retrieve
+Retrieves a Salesforce Account record with the given Account Id.
+
+=== Parameters
+[Account Id]
+  The Id of the Salesforce Account record that will be retrieved
+
+=== Results
+[Account Name]
+  The Account Name field of the Account record
+[Account Site]
+  The Account Site field of the Account record
+[Type]
+  The Type field of the Account record
+[Industry]
+  The Industry field of the Account record
+[Annual Revenue]
+  The Annual Revenue field of the Account record
+[Rating]
+  The Rating field of the Account record
+[Phone]
+  The Phone field of the Account record
+[Fax]
+  The Fax field of the Account record
+[Website]
+  The Website field of the Account record
+[Ownership]
+  The Ownership field of the Account record
+
+=== Sample Configuration
+Account Id:                      001i000000Clpmm
+
+=== Detailed Description
+Retrieves a Salesforce Account's information based on the inputted id.
+The first thing that the handler does is obtain an access token using the
+inputted info values, which is used to authenticate the rest of the calls that
+are made. The inputted account id is then used to build a URL to retrieve
+the account information, which is then formatted and returned as XML results.
+If the account id cannot be found or any other errors are encountered, they
+will be caught and raised by the handler.
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

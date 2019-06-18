@@ -1,0 +1,61 @@
+== Salesforce Opportunity Create
+Creates a Salesforce Opportunity record with the given parameters and returns
+the id of the new Opportunity record.
+
+=== Parameters
+[Opportunity Name]
+  Sets the Opportunity Name field of the Opportunity record
+[Close Date]
+  Sets the Close Date field of the Opportunity record (in the form of YYYY-MM-DD)
+[Stage]
+  Sets the Stage field of the Opportunity record
+[Private]
+  Sets the Private field of the Opportunity record
+[Type]
+  Sets the Type field of the Opportunity record
+[Lead Source]
+  Sets the Lead Source field of the Opportunity record
+[Amount]
+  Sets the Amount field of the Opportunity record
+[Next Step]
+  Sets the Next Step field of the Opportunity record
+[Probability]
+  Sets the Probability field of the Opportunity record
+
+=== Results
+[Opportunity Id]
+  The Id of the Salesforce Opportunity record that was created
+
+=== Sample Configuration 
+Opportunity Name:                     Complex Opportunity
+Close Date:                           2017-09-15
+Stage:                                Prospecting
+Private:                              false
+Type:                                 New Customer
+Lead Source:                          Web
+Amount:                               30000
+Next Step:                            Follow-up with customer
+Probability:                          15
+
+=== Detailed Description
+Creates a Salesforce Opportunity record with the given parameters and returns
+the Opportunity Id of the created Opportunity record. The first thing that the
+handler does is obtain an access token using the inputted info values, which is
+used to authenticate the rest of the calls that are made. The parameter inputs
+are then used to build an Opportunity object which is sent to the Salesforce
+REST API to create an Opportunity with those values.
+
+=== Where to find the Client ID, Client Secret, Security Token
+  1. Go to Setup, which is in the dropdown menu under your name in the upper
+     righthand corner.
+  2. On the left sidebar, your Security Token can be found under
+     Personal Setup > My Personal Information > Reset My Security Token.
+  3. To get the Client ID and Client Secret, Navigate back to Setup and go to
+     Manage Apps.
+  4. Create a new Connected App, and fill in the basic information for the app.
+  5. Check the Enable OAuth Settings checkbox and put https://auth for your
+     callback url.
+  6. Under selected OAuth scopes, add Access and manage your data (api) to your
+     selected scopes and save.
+  7. Your Client ID and Client Secret will be found on the app information page
+     that you were redirected to upon saving.

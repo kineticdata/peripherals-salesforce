@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="salesforce_opportunity_retrieve" name="Salesforce Opportunity Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Retrieves a Salesforce Opportunity record with the given parameters.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/salesforce_opportunity_retrieve/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="opportunity_id" label="Opportunity Id" required="true"
+          tooltip="The Id of the Salesforce Opportunity record that will be retrieved" />
+    </parameters>
+    <handler name="salesforce_opportunity_retrieve" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="token">&lt;%= @info['token'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='opportunity_id'>&lt;%= @parameters['opportunity_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Opportunity Name"/>
+        <result name="Close Date"/>
+        <result name="Stage"/>
+        <result name="Private"/>
+        <result name="Type"/>
+        <result name="Lead Source"/>
+        <result name="Amount"/>
+        <result name="Next Step"/>
+        <result name="Probability"/>
+    </results>
+</taskDefinition>
