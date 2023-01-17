@@ -62,7 +62,7 @@ class SalesforceObjectRetrieveV1
     # Return results which is an XML String
     <<-RESULTS
     <results>
-        <result name="Object JSON">#{resp.body}</result>
+        <result name="Object JSON">#{escape(resp.body)}</result>
     </results>
     RESULTS
   end
